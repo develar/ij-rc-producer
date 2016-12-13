@@ -1,0 +1,22 @@
+# The list or single options object
+
+# The applicable file patterns. Required. Single (not list) pattern maybe specified.
+files: ["dirRelativeToProjectRoot/**/*", "!**/butNotThisFile"]
+# The script to run. Defaults to current file.
+script: "node_modules/.bin/jest"
+# The script args. Next macros are supported:
+# ${file} — current file,
+# ${fileNameWithoutExt} — current file name without extension,
+# ${0} — n group match (see lineRegExp),
+# ${0regExp} — n group match prepared as regExp (required for jest https://github.com/facebook/jest/issues/926)
+scriptArgs: ["-i", "-t", "${0regExp}", "${fileNameWithoutExt}"]
+# The node args
+nodeArgs: ["-r", "babel-register"]
+# The working directory. Defaults to project root. Relative path resolved against project root.
+workingDirectory: "foo"
+# The applicable line regExp. Tip: wrap in single quote (use doubled '' to escape ' (http://yaml.org/spec/current.html#id2534365))
+lineRegExp: '^\s*(?:test|it)(?:\.[A-Za-z0-9_]*)?\("([^"'']+)'
+# The IDs of before run tasks. Only `typescript` (Compile TypeScript) is recognized.
+beforeRun: typescript
+# The run configuration name. Macros as for `scriptArgs` are supported.
+rcName: "${fileNameWithoutExt}.${0}"
