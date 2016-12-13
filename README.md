@@ -1,6 +1,6 @@
 # .idea/rc-producer.yaml
 
-NodeJS Run Configuration Producer configurations for IntelliJ Platform (IntelliJ IDEA, WebStorm).
+NodeJS Run Configuration Producer configurations for IntelliJ Platform (IntelliJ IDEA, WebStorm — 2017.1+).
 
 Example: https://github.com/electron-userland/electron-builder/blob/master/.idea/rc-producer.yml
 
