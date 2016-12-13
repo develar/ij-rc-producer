@@ -1,6 +1,8 @@
 # .idea/rc-producer.yaml
 
-NodeJS Run Configuration Producer configurations for IntelliJ Platform (IntelliJ IDEA, WebStorm — 2017.1+).
+NodeJS Run Configuration Producer for IntelliJ Platform (IntelliJ IDEA, WebStorm — 2017.1+).
+
+This repository contains docs and sample configurations for various tools (e.g. Jest, Ava).
 
 Example: https://github.com/electron-userland/electron-builder/blob/master/.idea/rc-producer.yml
 
@@ -25,12 +27,14 @@ You can override:
 - &defaults
   files: ["test/src/**/*", "!**/helpers/**/*"]
   script: "node_modules/.bin/jest"
-  scriptArgs: ["-i", "--env", "jest-environment-node-debug", "${fileNameWithoutExt}"]
+  scriptArgs: ["-i", "--env", "jest-environment-node-debug", &filePattern '/${fileNameWithoutExt}\.\w+$']
   rcName: "${fileNameWithoutExt}"
+  beforeRun: typescript
 
 -
   <<: *defaults
-  scriptArgs: ["-i", "--env", "jest-environment-node-debug", "-t", "${0regExp}", "${fileNameWithoutExt}"]
+  lineRegExp: '^\s*(?:test|it)(?:\.\w+)?\("([^"'']+)'
+  scriptArgs: ["-i", "--env", "jest-environment-node-debug", "-t", "${0regExp}", *filePattern]
   rcName: "${fileNameWithoutExt}.${0}"
 ```
 
