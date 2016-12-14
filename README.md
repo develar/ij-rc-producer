@@ -4,7 +4,11 @@ NodeJS Run Configuration Producer for IntelliJ Platform (IntelliJ IDEA, WebStorm
 
 This repository contains docs and sample configurations for various tools (e.g. Jest, Ava).
 
-Example: https://github.com/electron-userland/electron-builder/blob/master/.idea/rc-producer.yml
+Create file `.idea/rc-producer.yml` in your project root (where `.idea` is a IntelliJ Platform project configuration directory).
+
+Sample files for: [Jest](https://github.com/develar/ij-rc-producer/blob/master/jest/rc-producer.yml)
+
+In most cases you just need to change `files` according to your needs.
 
 <img width="442" alt="screen shot 2016-12-06 at 11 20 40" src="https://cloud.githubusercontent.com/assets/350686/20921813/195b0168-bba6-11e6-9076-8de8bd1dd0e9.png">
 

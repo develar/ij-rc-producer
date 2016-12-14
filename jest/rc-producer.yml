@@ -1,0 +1,12 @@
+- &defaults
+  files: ["**/__tests__/**/*", "**/*.(test|spec).*", "!**/node_modules/**/*"]
+  script: "node_modules/.bin/jest"
+  scriptArgs: ["-i", &filePattern '/${fileNameWithoutExt}\.\w+$']
+  rcName: "${fileNameWithoutExt}"
+  beforeRun: typescript
+
+-
+  <<: *defaults
+  lineRegExp: '^\s*(?:test|it|describe)(?:\.[^(]+)?\((?:"|''){1}([^"'']+)'
+  scriptArgs: ["-i", "-t", "${0regExp}", *filePattern]
+  rcName: "${fileNameWithoutExt}.${0}"
