@@ -1,0 +1,5 @@
+files: ["**/__tests__/**/*", "**/test/**/*", "**/*.(test|spec).*", "**/*Spec.*", "!**/node_modules/**/*"]
+script: "node_modules/.bin/karma"
+lineRegExp: '^\s*(?:test|it|describe)(?:\.[^(]+)?\((?:"|''){1}([^"'']+)'
+scriptArgs: ["run", "--", "--grep", "${0}"]
+rcName: "${fileNameWithoutExt}.${0}"
