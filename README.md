@@ -1,8 +1,12 @@
-# .idea/rc-producer.yaml
+# .idea/rc-producer.yml
 
 NodeJS Run Configuration Producer for IntelliJ Platform (IntelliJ IDEA, WebStorm — 2017.1+).
 
-This repository contains docs and sample configurations for various tools (e.g. Jest, Ava).
+This repository contains docs and sample configurations for various tools (e.g. Jest, Ava). 
+
+Want to share your config? Send a [pull request](https://github.com/develar/ij-rc-producer/pulls).
+
+## Usage
 
 Create file `.idea/rc-producer.yml` in your project root (where `.idea` is a IntelliJ Platform project configuration directory).
 
@@ -14,7 +18,7 @@ In most cases you just need to change `files` according to your needs.
 
 [Option object](https://github.com/develar/ij-rc-producer/blob/master/rc-producer.yml) or list of option objects are expected on root level.
 
-List of option objects:
+Example of option object list:
 ```yaml
 -
   files: ["test/src/**/*", "!**/helpers/**/*",]
@@ -22,7 +26,7 @@ List of option objects:
   files: ["bar",]
 ```
 
-# Common Options
+## Common Options
 YAML allows you to avoid duplication — [Merging Options](http://atechie.net/2009/07/merging-hashes-in-yaml-conf-files/). 
 
 You can override:
