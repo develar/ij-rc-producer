@@ -1,6 +1,6 @@
 - &defaults
   files: ["**/__tests__/**/*", "**/*.spec.*", "**/*.test.*", "!**/node_modules/**/*"]
-  script: "node_modules/.bin/jest"
+  script: "node_modules/jest-cli/bin/jest.js"
   scriptArgs: ["-i", &filePattern '/${fileNameWithoutExt}\.\w+$']
   rcName: "${fileNameWithoutExt}"
 
